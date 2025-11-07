@@ -55,19 +55,16 @@ struct FSFeaturedArticleWidget: View {
                         Text(article.title)
                             .font(.bodyMBold)
                             .foregroundColor(.brandSlateBlack500)
-                            .lineLimit(2)
+                            .lineLimit(3)
                             .multilineTextAlignment(.leading)
 
                         Text(article.perex)
                             .font(.labelMRegular)
                             .foregroundColor(.greyC500)
-                            .lineLimit(2)
+                            .lineLimit(3)
+                            .truncationMode(.tail)
                             .multilineTextAlignment(.leading)
-
-                        Spacer()
                     }
-
-                    Spacer()
                 }
                 .padding(FSSpacing.xs16)
                 .frame(height: 130)
