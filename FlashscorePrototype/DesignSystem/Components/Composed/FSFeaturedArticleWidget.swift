@@ -22,9 +22,9 @@ struct FSFeaturedArticleWidget: View {
             }
             .padding(.horizontal, FSSpacing.xs16)
             .padding(.vertical, FSSpacing.xxs8)
-            .frame(minHeight: 160)
+            .frame(minHeight: 130)
         }
-        .frame(height: 192)
+        .frame(height: 162)
     }
 
     private struct ArticleCard: View {
@@ -33,11 +33,11 @@ struct FSFeaturedArticleWidget: View {
 
         var body: some View {
             Button(action: onTap) {
-                VStack(spacing: FSSpacing.xs16) {
-                    // Image placeholder (16:9 aspect ratio)
+                HStack(spacing: FSSpacing.xs16) {
+                    // Image placeholder on left (square)
                     ZStack(alignment: .topLeading) {
                         Color.greyA300
-                            .aspectRatio(16/9, contentMode: .fit)
+                            .frame(width: 90, height: 90)
                             .cornerRadius(8)
 
                         // Hot badge
@@ -51,7 +51,7 @@ struct FSFeaturedArticleWidget: View {
                             .padding(FSSpacing.xxs8)
                     }
 
-                    // Text content
+                    // Text content on right
                     VStack(alignment: .leading, spacing: FSSpacing.xxxs4) {
                         Text(article.title)
                             .font(.bodyMBold)
@@ -64,12 +64,14 @@ struct FSFeaturedArticleWidget: View {
                             .foregroundColor(.greyC500)
                             .lineLimit(2)
                             .multilineTextAlignment(.leading)
+
+                        Spacer()
                     }
 
                     Spacer()
                 }
                 .padding(FSSpacing.xs16)
-                .frame(width: 260, height: 160)
+                .frame(width: 280, height: 130)
                 .background(Color.white)
                 .cornerRadius(8)
             }
