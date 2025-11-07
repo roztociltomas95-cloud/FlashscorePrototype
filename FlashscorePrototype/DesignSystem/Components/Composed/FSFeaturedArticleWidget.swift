@@ -68,7 +68,7 @@ struct FSFeaturedArticleWidget: View {
                     }
                     .frame(maxHeight: .infinity, alignment: .center)
                 }
-                .padding(FSSpacing.xs16)
+                .padding(FSSpacing.xxs8)
                 .frame(maxWidth: UIScreen.main.bounds.width * 0.8)
                 .background(Color.white)
                 .cornerRadius(8)
