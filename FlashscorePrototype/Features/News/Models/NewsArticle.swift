@@ -11,6 +11,7 @@ struct NewsArticle: Identifiable {
     let id: UUID
     let title: String
     let imageName: String
+    let perex: String
     let category: NewsCategory
     let isSponsored: Bool
     let isFeatured: Bool
@@ -19,6 +20,7 @@ struct NewsArticle: Identifiable {
         id: UUID = UUID(),
         title: String,
         imageName: String,
+        perex: String = "",
         category: NewsCategory,
         isSponsored: Bool = false,
         isFeatured: Bool = false
@@ -26,6 +28,7 @@ struct NewsArticle: Identifiable {
         self.id = id
         self.title = title
         self.imageName = imageName
+        self.perex = perex
         self.category = category
         self.isSponsored = isSponsored
         self.isFeatured = isFeatured

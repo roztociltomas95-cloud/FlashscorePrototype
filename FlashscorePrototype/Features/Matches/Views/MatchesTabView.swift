@@ -11,6 +11,14 @@ struct MatchesTabView: View {
     @State private var selectedSport = "Football"
     @State private var showSportPicker = false
 
+    // Get top 5 football articles for featured widget
+    private var featuredArticles: [NewsArticle] {
+        MockNewsData.articles
+            .filter { $0.category == .football }
+            .prefix(5)
+            .map { $0 }
+    }
+
     var body: some View {
         VStack(spacing: 0) {
             // Navigation Bar
@@ -27,6 +35,14 @@ struct MatchesTabView: View {
 
             // Date carousel
             FSDateCarousel()
+
+            // Featured article widget
+            FSFeaturedArticleWidget(
+                articles: featuredArticles,
+                onArticleTap: { article in
+                    // TODO: Navigate to article detail
+                }
+            )
 
             Divider()
                 .background(Color.greyA300)
