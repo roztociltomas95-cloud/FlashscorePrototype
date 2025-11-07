@@ -32,11 +32,11 @@ struct FSFeaturedArticleWidget: View {
 
         var body: some View {
             Button(action: onTap) {
-                HStack(spacing: FSSpacing.xxs8) {
-                    // Image placeholder on left (square)
+                HStack(spacing: FSSpacing.xs16) {
+                    // Image placeholder on left (3:2 aspect ratio)
                     ZStack(alignment: .topLeading) {
                         Color.greyA300
-                            .frame(width: 90, height: 90)
+                            .aspectRatio(3/2, contentMode: .fit)
                             .cornerRadius(8)
 
                         // Hot badge
@@ -49,28 +49,28 @@ struct FSFeaturedArticleWidget: View {
                             .cornerRadius(4)
                             .padding(FSSpacing.xxs8)
                     }
+                    .frame(width: 120)
 
                     // Text content on right
-                    VStack(alignment: .leading, spacing: FSSpacing.xxxs4) {
+                    VStack(alignment: .leading, spacing: FSSpacing.xxs8) {
                         Text(article.title)
                             .font(.bodyMBold)
                             .foregroundColor(.brandSlateBlack500)
-                            .lineLimit(4)
+                            .lineLimit(3)
                             .multilineTextAlignment(.leading)
 
                         Text(article.perex)
                             .font(.labelMRegular)
                             .foregroundColor(.greyC500)
-                            .lineLimit(4)
+                            .lineLimit(2)
                             .truncationMode(.tail)
                             .multilineTextAlignment(.leading)
                     }
-                    .frame(maxHeight: .infinity, alignment: .top)
+                    .frame(maxHeight: .infinity, alignment: .center)
+
+                    Spacer()
                 }
-                .padding(.vertical, FSSpacing.xxs8)
-                .padding(.horizontal, FSSpacing.xxs8)
-                .padding(.leading, 0)
-                .frame(height: 130)
+                .padding(FSSpacing.xs16)
                 .background(Color.white)
                 .cornerRadius(8)
             }
