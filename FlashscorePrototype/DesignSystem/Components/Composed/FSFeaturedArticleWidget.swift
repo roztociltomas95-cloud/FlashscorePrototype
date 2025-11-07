@@ -37,31 +37,34 @@ struct FSFeaturedArticleWidget: View {
                     // Background image
                     Image("NewsArticles/messi-goat")
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .clipped()
-                        .cornerRadius(8)
+                        .scaledToFill()
+                        .ignoresSafeArea()
 
                     // Dark overlay for better text readability
                     LinearGradient(
-                        gradient: Gradient(colors: [.clear, .black.opacity(0.3)]),
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
+                        gradient: Gradient(colors: [.clear, .black.opacity(0.5)]),
+                        startPoint: .top,
+                        endPoint: .bottom
                     )
-                    .cornerRadius(8)
 
-                    VStack(alignment: .leading, spacing: FSSpacing.xs16) {
-                        // Hot badge
-                        Text("Hot")
-                            .font(.labelMBold)
-                            .foregroundColor(.white)
-                            .padding(.horizontal, FSSpacing.xxs8)
-                            .padding(.vertical, FSSpacing.xxxs4)
-                            .background(Color.brandRed500)
-                            .cornerRadius(4)
+                    VStack(alignment: .leading, spacing: 0) {
+                        // Hot badge at top
+                        HStack {
+                            Text("Hot")
+                                .font(.labelMBold)
+                                .foregroundColor(.white)
+                                .padding(.horizontal, FSSpacing.xxs8)
+                                .padding(.vertical, FSSpacing.xxxs4)
+                                .background(Color.brandRed500)
+                                .cornerRadius(4)
+
+                            Spacer()
+                        }
+                        .padding(FSSpacing.xs16)
 
                         Spacer()
 
-                        // Text content
+                        // Text content at bottom
                         VStack(alignment: .leading, spacing: FSSpacing.xxxs4) {
                             Text(article.title)
                                 .font(.bodyMBold)
@@ -75,11 +78,12 @@ struct FSFeaturedArticleWidget: View {
                                 .lineLimit(2)
                                 .multilineTextAlignment(.leading)
                         }
+                        .padding(FSSpacing.xs16)
                     }
-                    .padding(FSSpacing.xs16)
                 }
                 .frame(width: 260, height: 120)
                 .cornerRadius(8)
+                .clipped()
             }
             .buttonStyle(.plain)
         }
