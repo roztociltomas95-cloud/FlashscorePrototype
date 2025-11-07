@@ -23,7 +23,7 @@ struct FSFeaturedArticleWidget: View {
             .padding(.horizontal, FSSpacing.xs16)
             .padding(.vertical, FSSpacing.xxs8)
         }
-        .frame(height: 162)
+        .frame(height: 142)
     }
 
     private struct ArticleCard: View {
@@ -36,7 +36,7 @@ struct FSFeaturedArticleWidget: View {
                     // Image placeholder on left (square)
                     ZStack(alignment: .topLeading) {
                         Color.greyA300
-                            .frame(width: 90, height: 90)
+                            .frame(width: 75, height: 75)
                             .cornerRadius(8)
 
                         // Hot badge
@@ -53,15 +53,15 @@ struct FSFeaturedArticleWidget: View {
                     // Text content on right
                     VStack(alignment: .leading, spacing: FSSpacing.xxxs4) {
                         Text(article.title)
-                            .font(.bodyMBold)
+                            .font(.labelMBold)
                             .foregroundColor(.brandSlateBlack500)
-                            .lineLimit(3)
+                            .lineLimit(2)
                             .multilineTextAlignment(.leading)
 
                         Text(article.perex)
-                            .font(.labelMRegular)
+                            .font(.labelSRegular)
                             .foregroundColor(.greyC500)
-                            .lineLimit(3)
+                            .lineLimit(2)
                             .truncationMode(.tail)
                             .multilineTextAlignment(.leading)
                     }
@@ -70,7 +70,7 @@ struct FSFeaturedArticleWidget: View {
                 .padding(.vertical, FSSpacing.xxs8)
                 .padding(.horizontal, FSSpacing.xxs8)
                 .padding(.leading, 0)
-                .frame(height: 130)
+                .frame(height: 110)
                 .background(Color.white)
                 .cornerRadius(8)
             }
