@@ -1,0 +1,23 @@
+<svg width="361" height="574" viewBox="0 0 361 574" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="2.04932" y="1" width="357.951" height="572" stroke="#C8CDCD" stroke-width="2"/>
+<line x1="2.09863" y1="286.525" x2="359.95" y2="286.525" stroke="#C8CDCD" stroke-width="2"/>
+<line x1="135.375" y1="135.417" x2="225.625" y2="135.417" stroke="#C8CDCD" stroke-width="2"/>
+<line x1="135.375" y1="439.731" x2="225.625" y2="439.731" stroke="#C8CDCD" stroke-width="2"/>
+<ellipse cx="180.5" cy="134.318" rx="45.125" ry="45.1225" stroke="#C8CDCD" stroke-width="2"/>
+<ellipse cx="180.5" cy="440.731" rx="45.125" ry="45.1225" stroke="#C8CDCD" stroke-width="2"/>
+<ellipse cx="180.5" cy="287.525" rx="45.125" ry="45.1225" stroke="#C8CDCD" stroke-width="2"/>
+<line x1="135.326" y1="438.633" x2="135.326" y2="574" stroke="#C8CDCD" stroke-width="2"/>
+<path d="M331.616 526.254C331.616 486.317 315.75 448.016 287.509 419.776C259.268 391.536 220.964 375.671 181.025 375.671C141.085 375.671 102.782 391.536 74.5404 419.776C46.299 448.016 30.4331 486.317 30.4331 526.254" stroke="#C8CDCD" stroke-width="2"/>
+<path d="M30.4331 526.254L30.4331 574" stroke="#C8CDCD" stroke-width="2"/>
+<path d="M331.616 526.254L331.616 574" stroke="#C8CDCD" stroke-width="2"/>
+<path d="M30.4331 47.7459C30.4331 87.683 46.2989 125.984 74.5403 154.224C102.782 182.464 141.085 198.329 181.025 198.329C220.964 198.329 259.268 182.464 287.509 154.224C315.75 125.984 331.616 87.6831 331.616 47.7459" stroke="#C8CDCD" stroke-width="2"/>
+<path d="M331.616 47.7458L331.616 -3.74913e-05" stroke="#C8CDCD" stroke-width="2"/>
+<path d="M30.4331 47.7458L30.4331 -3.74913e-05" stroke="#C8CDCD" stroke-width="2"/>
+<line x1="135.326" y1="1.04956" x2="135.326" y2="136.417" stroke="#C8CDCD" stroke-width="2"/>
+<line x1="225.576" y1="438.633" x2="225.576" y2="574" stroke="#C8CDCD" stroke-width="2"/>
+<line x1="225.576" y1="1.04956" x2="225.576" y2="136.417" stroke="#C8CDCD" stroke-width="2"/>
+<circle cx="180.5" cy="30.432" r="8.39535" stroke="#C8CDCD" stroke-width="2"/>
+<line x1="149.018" y1="19.0366" x2="211.983" y2="19.0366" stroke="#C8CDCD" stroke-width="6"/>
+<circle cx="180.5" cy="544.618" r="8.39535" transform="rotate(-180 180.5 544.618)" stroke="#C8CDCD" stroke-width="2"/>
+<line x1="211.982" y1="556.013" x2="149.017" y2="556.013" stroke="#C8CDCD" stroke-width="6"/>
+</svg>
