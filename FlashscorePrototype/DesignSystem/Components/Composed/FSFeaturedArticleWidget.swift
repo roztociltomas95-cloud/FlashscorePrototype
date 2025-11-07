@@ -13,16 +13,18 @@ struct FSFeaturedArticleWidget: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 0) {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: FSSpacing.xs16) {
                     ForEach(articles) { article in
                         ArticleCard(article: article, onTap: {
                             onArticleTap(article)
                         })
-                        .frame(height: UIScreen.main.bounds.height / 3)
+                        .frame(width: UIScreen.main.bounds.width - (FSSpacing.xs16 * 2))
                     }
                 }
+                .padding(.horizontal, FSSpacing.xs16)
             }
+            .frame(height: UIScreen.main.bounds.height / 4)
         }
     }
 
@@ -32,7 +34,7 @@ struct FSFeaturedArticleWidget: View {
 
         var body: some View {
             Button(action: onTap) {
-                HStack(spacing: FSSpacing.xs16) {
+                VStack(spacing: FSSpacing.xs16) {
                     // Image with label
                     ZStack(alignment: .topLeading) {
                         Image(article.imageName)
@@ -51,29 +53,27 @@ struct FSFeaturedArticleWidget: View {
                             .cornerRadius(4)
                             .padding(FSSpacing.xxs8)
                     }
-                    .frame(width: 140)
 
                     // Text content
-                    VStack(alignment: .leading, spacing: FSSpacing.xxs8) {
+                    VStack(alignment: .leading, spacing: FSSpacing.xxxs4) {
                         Text(article.title)
-                            .font(.headingS)
+                            .font(.bodyMBold)
                             .foregroundColor(.brandSlateBlack500)
-                            .lineLimit(3)
+                            .lineLimit(2)
                             .multilineTextAlignment(.leading)
 
                         Text(article.perex)
-                            .font(.bodyMRegular)
+                            .font(.labelMRegular)
                             .foregroundColor(.greyC500)
-                            .lineLimit(3)
+                            .lineLimit(2)
                             .multilineTextAlignment(.leading)
-
-                        Spacer()
                     }
 
                     Spacer()
                 }
                 .padding(FSSpacing.xs16)
                 .background(Color.white)
+                .cornerRadius(8)
             }
             .buttonStyle(.plain)
         }
