@@ -67,10 +67,9 @@ struct FSFeaturedArticleWidget: View {
                             .multilineTextAlignment(.leading)
                     }
                     .frame(maxHeight: .infinity, alignment: .center)
-
-                    Spacer()
                 }
                 .padding(FSSpacing.xs16)
+                .frame(maxWidth: UIScreen.main.bounds.width * 0.8)
                 .background(Color.white)
                 .cornerRadius(8)
             }
