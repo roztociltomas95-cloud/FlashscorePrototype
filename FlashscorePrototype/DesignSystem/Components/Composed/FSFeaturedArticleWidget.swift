@@ -32,13 +32,13 @@ struct FSFeaturedArticleWidget: View {
 
         var body: some View {
             Button(action: onTap) {
-                VStack(spacing: FSSpacing.xs16) {
-                    // Image with label
+                HStack(spacing: FSSpacing.xs16) {
+                    // Image with label (left side)
                     ZStack(alignment: .topLeading) {
                         Image(article.imageName)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(height: 80)
+                            .frame(width: 100, height: 128)
                             .clipped()
                             .cornerRadius(8)
 
@@ -53,7 +53,7 @@ struct FSFeaturedArticleWidget: View {
                             .padding(FSSpacing.xxs8)
                     }
 
-                    // Text content
+                    // Text content (right side)
                     VStack(alignment: .leading, spacing: FSSpacing.xxxs4) {
                         Text(article.title)
                             .font(.bodyMBold)
@@ -64,12 +64,14 @@ struct FSFeaturedArticleWidget: View {
                         Text(article.perex)
                             .font(.labelMRegular)
                             .foregroundColor(.greyC500)
-                            .lineLimit(1)
+                            .lineLimit(2)
                             .multilineTextAlignment(.leading)
+
+                        Spacer()
                     }
                 }
                 .padding(FSSpacing.xs16)
-                .frame(width: 240)
+                .frame(width: 280, height: 160)
                 .background(Color.white)
                 .cornerRadius(8)
             }
