@@ -32,7 +32,7 @@ struct FSFeaturedArticleWidget: View {
 
         var body: some View {
             Button(action: onTap) {
-                HStack(spacing: FSSpacing.xs16) {
+                HStack(spacing: FSSpacing.xxs8) {
                     // Image placeholder on left (square)
                     ZStack(alignment: .topLeading) {
                         Color.greyA300
@@ -65,8 +65,11 @@ struct FSFeaturedArticleWidget: View {
                             .truncationMode(.tail)
                             .multilineTextAlignment(.leading)
                     }
+                    .frame(maxHeight: .infinity, alignment: .top)
                 }
-                .padding(FSSpacing.xs16)
+                .padding(.vertical, FSSpacing.xxs8)
+                .padding(.horizontal, FSSpacing.xxs8)
+                .padding(.leading, 0)
                 .frame(height: 130)
                 .background(Color.white)
                 .cornerRadius(8)
