@@ -22,7 +22,6 @@ struct FSFeaturedArticleWidget: View {
             }
             .padding(.horizontal, FSSpacing.xs16)
             .padding(.vertical, FSSpacing.xxs8)
-            .frame(minHeight: 130)
         }
         .frame(height: 162)
     }
@@ -71,7 +70,7 @@ struct FSFeaturedArticleWidget: View {
                     Spacer()
                 }
                 .padding(FSSpacing.xs16)
-                .frame(width: 280, height: 130)
+                .frame(height: 130)
                 .background(Color.white)
                 .cornerRadius(8)
             }
