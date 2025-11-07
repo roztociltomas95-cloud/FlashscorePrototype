@@ -45,47 +45,47 @@ struct MatchesTabView: View {
             )
             .background(Color.white)
 
-            Divider()
-                .background(Color.greyA300)
-
             // All games header
-            HStack {
-                HStack(spacing: FSSpacing.xxs8) {
-                    Image(systemName: "line.3.horizontal")
-                        .font(.system(size: 18))
-                        .foregroundColor(.brandSlateBlack500)
+            VStack(spacing: 0) {
+                Divider()
+                    .background(Color.greyA300)
 
-                    Text("All games")
-                        .font(.headingM)
-                        .foregroundColor(.brandSlateBlack500)
+                HStack {
+                    HStack(spacing: FSSpacing.xxs8) {
+                        Image(systemName: "line.3.horizontal")
+                            .font(.system(size: 18))
+                            .foregroundColor(.brandSlateBlack500)
+
+                        Text("All games")
+                            .font(.headingM)
+                            .foregroundColor(.brandSlateBlack500)
+                    }
+
+                    Spacer()
+
+                    HStack(spacing: FSSpacing.xs16) {
+                        Image(systemName: "headphones")
+                            .font(.system(size: 16))
+                            .foregroundColor(.greyC500)
+
+                        Text("11")
+                            .font(.bodyMBold)
+                            .foregroundColor(.white)
+                            .frame(minWidth: 32)
+                            .padding(.vertical, FSSpacing.xxxs4)
+                            .background(Color.brandRed500)
+                            .cornerRadius(4)
+
+                        Text("109")
+                            .font(.bodyMBold)
+                            .foregroundColor(.greyC500)
+                    }
                 }
-
-                Spacer()
-
-                HStack(spacing: FSSpacing.xs16) {
-                    Image(systemName: "headphones")
-                        .font(.system(size: 16))
-                        .foregroundColor(.greyC500)
-
-                    Text("11")
-                        .font(.bodyMBold)
-                        .foregroundColor(.white)
-                        .frame(minWidth: 32)
-                        .padding(.vertical, FSSpacing.xxxs4)
-                        .background(Color.brandRed500)
-                        .cornerRadius(4)
-
-                    Text("109")
-                        .font(.bodyMBold)
-                        .foregroundColor(.greyC500)
-                }
+                .padding(.horizontal, FSSpacing.xs16)
+                .padding(.vertical, FSSpacing.xxs8)
+                .background(Color.white)
             }
-            .padding(.horizontal, FSSpacing.xs16)
-            .padding(.vertical, FSSpacing.xxs8)
             .background(Color.white)
-
-            Divider()
-                .background(Color.greyA300)
 
             // Competitions header
             HStack {
