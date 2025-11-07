@@ -11,24 +11,17 @@ struct FSFeaturedArticleWidget: View {
     let articles: [NewsArticle]
     let onArticleTap: (NewsArticle) -> Void
 
-    @State private var currentIndex = 0
-
     var body: some View {
         VStack(spacing: 0) {
-            ScrollViewReader { proxy in
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing: FSSpacing.xs16) {
-                        ForEach(Array(articles.enumerated()), id: \.element.id) { index, article in
-                            ArticleCard(article: article, onTap: {
-                                onArticleTap(article)
-                            })
-                            .id(index)
-                        }
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(spacing: 0) {
+                    ForEach(articles) { article in
+                        ArticleCard(article: article, onTap: {
+                            onArticleTap(article)
+                        })
+                        .frame(height: UIScreen.main.bounds.height / 3)
                     }
-                    .padding(.horizontal, FSSpacing.xs16)
-                    .padding(.vertical, FSSpacing.xs16)
                 }
-                .frame(height: UIScreen.main.bounds.height / 3)
             }
         }
     }
@@ -45,7 +38,6 @@ struct FSFeaturedArticleWidget: View {
                         Image(article.imageName)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 110, height: 110)
                             .clipped()
                             .cornerRadius(8)
 
@@ -59,31 +51,29 @@ struct FSFeaturedArticleWidget: View {
                             .cornerRadius(4)
                             .padding(FSSpacing.xxs8)
                     }
+                    .frame(width: 140)
 
                     // Text content
-                    VStack(alignment: .leading, spacing: FSSpacing.xxxs4) {
+                    VStack(alignment: .leading, spacing: FSSpacing.xxs8) {
                         Text(article.title)
-                            .font(.bodyMBold)
+                            .font(.headingS)
                             .foregroundColor(.brandSlateBlack500)
-                            .lineLimit(2)
+                            .lineLimit(3)
                             .multilineTextAlignment(.leading)
 
                         Text(article.perex)
                             .font(.bodyMRegular)
                             .foregroundColor(.greyC500)
-                            .lineLimit(2)
+                            .lineLimit(3)
                             .multilineTextAlignment(.leading)
 
                         Spacer()
                     }
-                    .frame(maxHeight: 110, alignment: .topLeading)
 
                     Spacer()
                 }
-                .frame(height: 110)
                 .padding(FSSpacing.xs16)
                 .background(Color.white)
-                .cornerRadius(8)
             }
             .buttonStyle(.plain)
         }
