@@ -22,9 +22,9 @@ struct FSFeaturedArticleWidget: View {
             }
             .padding(.horizontal, FSSpacing.xs16)
             .padding(.vertical, FSSpacing.xxs8)
-            .frame(minHeight: 160)
+            .frame(minHeight: 120)
         }
-        .frame(height: 176)
+        .frame(height: 136)
     }
 
     private struct ArticleCard: View {
@@ -39,7 +39,7 @@ struct FSFeaturedArticleWidget: View {
                         Image(article.imageName)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 100, height: 128)
+                            .frame(width: 80, height: 100)
                             .clipped()
                             .cornerRadius(8)
 
@@ -72,7 +72,7 @@ struct FSFeaturedArticleWidget: View {
                     }
                 }
                 .padding(FSSpacing.xs16)
-                .frame(width: 280, height: 160)
+                .frame(width: 260, height: 120)
                 .background(Color.white)
                 .cornerRadius(8)
             }
