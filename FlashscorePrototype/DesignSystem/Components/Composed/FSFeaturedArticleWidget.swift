@@ -21,9 +21,10 @@ struct FSFeaturedArticleWidget: View {
                 }
             }
             .padding(.horizontal, FSSpacing.xs16)
+            .padding(.vertical, FSSpacing.xs16)
             .frame(minHeight: 160)
         }
-        .frame(height: 160)
+        .frame(height: 192)
     }
 
     private struct ArticleCard: View {

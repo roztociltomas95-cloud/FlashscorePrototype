@@ -43,6 +43,7 @@ struct MatchesTabView: View {
                     // TODO: Navigate to article detail
                 }
             )
+            .background(Color.white)
 
             Divider()
                 .background(Color.greyA300)
