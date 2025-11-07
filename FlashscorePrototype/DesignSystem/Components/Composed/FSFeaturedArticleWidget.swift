@@ -33,16 +33,23 @@ struct FSFeaturedArticleWidget: View {
 
         var body: some View {
             Button(action: onTap) {
-                HStack(spacing: FSSpacing.xs16) {
-                    // Image with label (left side)
-                    ZStack(alignment: .topLeading) {
-                        Image(article.imageName)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 80, height: 100)
-                            .clipped()
-                            .cornerRadius(8)
+                ZStack(alignment: .topLeading) {
+                    // Background image
+                    Image("NewsArticles/messi-goat")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .clipped()
+                        .cornerRadius(8)
 
+                    // Dark overlay for better text readability
+                    LinearGradient(
+                        gradient: Gradient(colors: [.clear, .black.opacity(0.3)]),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                    .cornerRadius(8)
+
+                    VStack(alignment: .leading, spacing: FSSpacing.xs16) {
                         // Hot badge
                         Text("Hot")
                             .font(.labelMBold)
@@ -51,29 +58,27 @@ struct FSFeaturedArticleWidget: View {
                             .padding(.vertical, FSSpacing.xxxs4)
                             .background(Color.brandRed500)
                             .cornerRadius(4)
-                            .padding(FSSpacing.xxs8)
-                    }
-
-                    // Text content (right side)
-                    VStack(alignment: .leading, spacing: FSSpacing.xxxs4) {
-                        Text(article.title)
-                            .font(.bodyMBold)
-                            .foregroundColor(.brandSlateBlack500)
-                            .lineLimit(2)
-                            .multilineTextAlignment(.leading)
-
-                        Text(article.perex)
-                            .font(.labelMRegular)
-                            .foregroundColor(.greyC500)
-                            .lineLimit(2)
-                            .multilineTextAlignment(.leading)
 
                         Spacer()
+
+                        // Text content
+                        VStack(alignment: .leading, spacing: FSSpacing.xxxs4) {
+                            Text(article.title)
+                                .font(.bodyMBold)
+                                .foregroundColor(.white)
+                                .lineLimit(2)
+                                .multilineTextAlignment(.leading)
+
+                            Text(article.perex)
+                                .font(.labelMRegular)
+                                .foregroundColor(.white)
+                                .lineLimit(2)
+                                .multilineTextAlignment(.leading)
+                        }
                     }
+                    .padding(FSSpacing.xs16)
                 }
-                .padding(FSSpacing.xs16)
                 .frame(width: 260, height: 120)
-                .background(Color.white)
                 .cornerRadius(8)
             }
             .buttonStyle(.plain)
