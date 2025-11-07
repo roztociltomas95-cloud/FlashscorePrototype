@@ -12,20 +12,18 @@ struct FSFeaturedArticleWidget: View {
     let onArticleTap: (NewsArticle) -> Void
 
     var body: some View {
-        VStack(spacing: 0) {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: FSSpacing.xs16) {
-                    ForEach(articles) { article in
-                        ArticleCard(article: article, onTap: {
-                            onArticleTap(article)
-                        })
-                        .frame(width: UIScreen.main.bounds.width - (FSSpacing.xs16 * 2))
-                    }
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: FSSpacing.xs16) {
+                ForEach(articles) { article in
+                    ArticleCard(article: article, onTap: {
+                        onArticleTap(article)
+                    })
                 }
-                .padding(.horizontal, FSSpacing.xs16)
             }
-            .frame(height: UIScreen.main.bounds.height / 4)
+            .padding(.horizontal, FSSpacing.xs16)
+            .frame(minHeight: 160)
         }
+        .frame(height: 160)
     }
 
     private struct ArticleCard: View {
@@ -40,6 +38,7 @@ struct FSFeaturedArticleWidget: View {
                         Image(article.imageName)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
+                            .frame(height: 80)
                             .clipped()
                             .cornerRadius(8)
 
@@ -65,13 +64,12 @@ struct FSFeaturedArticleWidget: View {
                         Text(article.perex)
                             .font(.labelMRegular)
                             .foregroundColor(.greyC500)
-                            .lineLimit(2)
+                            .lineLimit(1)
                             .multilineTextAlignment(.leading)
                     }
-
-                    Spacer()
                 }
                 .padding(FSSpacing.xs16)
+                .frame(width: 240)
                 .background(Color.white)
                 .cornerRadius(8)
             }
